@@ -2,14 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<title>Mapa</title>
+<style type="text/css">
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+}
+</style>
 </head>
 <body>
 	<div>
 		<p>OIIII</p>
 	</div>
+	<div id="map"></div>
+	<script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+	<script th:src="@{/js/mapa.js}"></script>
 </body>
 </html>
