@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
+<title>Mapa</title>
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 <link th:href="@{/css/mapa.css}" rel="stylesheet" />
 </head>
 <body>
 	<div id="floating-panel" class="col-md-offset-10 col-md-2">
-		<a href="#" class="btn btn-sm btn-primary">Rank Estabelecimentos</a>
+		<a th:href="@{/rank}" class="btn btn-sm btn-primary">Rank Estabelecimentos</a>
 	</div>
 	<div id="map"></div>
 	

@@ -7,28 +7,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 @Entity
-public class Estabelecimento implements Serializable{
+public class Estabelecimento implements Serializable {
 
 	private static final long serialVersionUID = 1l;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@NotEmpty(message = "Campo obrigatório")
 	@Pattern(regexp = "[a-zA-Z\\sà-ùÀ-Ù]{0,}", message = "O campo Nome não pode possuir caracteres especiais ou números.")
 	private String nome;
 
-	@JsonBackReference
-	private Coordenada coordenadas;
-	
+	private Coordenada coordenada;
+
+	@OneToMany
+	private List<Avaliacao> avaliacoes;
+
 	public Estabelecimento() {
 		super();
 	}
@@ -36,7 +37,8 @@ public class Estabelecimento implements Serializable{
 	public Estabelecimento(String nome, Coordenada coordenadas, List<Avaliacao> avaliacoes) {
 		super();
 		this.nome = nome;
-		this.coordenadas = coordenadas;
+		this.coordenada = coordenadas;
+		this.avaliacoes = avaliacoes;
 	}
 
 	public Integer getId() {
@@ -55,11 +57,19 @@ public class Estabelecimento implements Serializable{
 		this.nome = nome;
 	}
 
-	public Coordenada getCoordenadas() {
-		return coordenadas;
+	public Coordenada getCoordenada() {
+		return coordenada;
 	}
 
-	public void setCoordenadas(Coordenada coordenadas) {
-		this.coordenadas = coordenadas;
+	public void setCoordenada(Coordenada coordenada) {
+		this.coordenada = coordenada;
+	}
+
+	public List<Avaliacao> getAvaliacoes() {
+		return avaliacoes;
+	}
+
+	public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+		this.avaliacoes = avaliacoes;
 	}
 }

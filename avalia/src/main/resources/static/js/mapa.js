@@ -26,15 +26,14 @@ $(document).ready(
 					console.log(estabelecimento);
 					var marker = new google.maps.Marker({
 						position : new google.maps.LatLng(
-								estabelecimento.coordenadas.latitude,
-								estabelecimento.coordenadas.longitude),
+								estabelecimento.coordenada.latitude,
+								estabelecimento.coordenada.longitude),
 						title : estabelecimento.nome,
 						map : map
 					});
 
 					var infowindow = new google.maps.InfoWindow({
-						content : estabelecimento.nome + ", Media Geral: "
-								+ estabelecimento.mediaGeral
+						content : estabelecimento.nome
 					});
 
 					google.maps.event.addListener(marker, 'click',
