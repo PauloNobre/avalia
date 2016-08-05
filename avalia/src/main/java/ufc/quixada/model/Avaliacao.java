@@ -106,8 +106,8 @@ public class Avaliacao implements Serializable{
 		return media;
 	}
 
-	public void setMedia(double media) {
-		this.media = media;
+	public void setMedia() {
+		this.media = (ambiente + atendimento + custoBeneficio + preco + qualidadeComida)/5;
 	}
 
 	public Estabelecimento getEstabelecimento() {

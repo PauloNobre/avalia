@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Avaliar</title>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h3 th:text="'Avaliar ' + ${estabelecimento.nome}"></h3>
+		</div>
+		<form role="form" th:action="@{/avaliar/} + ${estabelecimento.id}" th:object="${avaliacao}" method="post">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="form-group">
+					<label>Atendimento</label>
+					<input class="form-control" type="number" name="" th:field="*{atendimento}" min="1" max="5"/>
+				</div>
+				<div class="form-group">
+					<label>Qualidade da Comida</label>
+					<input class="form-control" type="number" name="" th:field="*{qualidadeComida}" min="1" max="5"/>
+				</div>
+				<div class="form-group">
+					<label>Preço</label>
+					<input class="form-control" type="number" name="" th:field="*{preco}" min="1" max="5"/>
+				</div>
+				<div class="form-group">
+					<label>Ambiente</label>
+					<input class="form-control" type="number" name="" th:field="*{ambiente}" min="1" max="5"/>
+				</div>
+				<div class="form-group">
+					<label>Custo Benefício</label>
+					<input class="form-control" type="number" name="" th:field="*{custoBeneficio}" min="1" max="5"/>
+				</div>
+			</div>
+			<div class="form-group text-center col-md-12">
+				<button type="submit" class="btn btn-primary">Avaliar</button>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

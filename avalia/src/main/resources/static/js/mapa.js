@@ -13,10 +13,10 @@ function initMap() {
 $(document).ready(
 	function(){
 	$.ajax({
-		url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC9OK9jV5lZTkUKu16gfhDIraFE66ScCzk&callback=initMap",
+		url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC9OK9jV5lZTkUKu16gfhDIraFE66ScCzk&sensor=false&callback=initMap",
 		dataType: "script",
 		async: true
-	});
+	}).done(function() {
 		$.ajax({
 			type : "GET",
 			url : "../getEstabelecimentos",
@@ -46,4 +46,5 @@ $(document).ready(
 				alert('Error occured');
 			}
 		});
-	})
+	});
+})

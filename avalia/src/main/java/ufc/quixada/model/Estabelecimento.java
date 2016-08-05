@@ -72,4 +72,18 @@ public class Estabelecimento implements Serializable {
 	public void setAvaliacoes(List<Avaliacao> avaliacoes) {
 		this.avaliacoes = avaliacoes;
 	}
+	
+	public void addAvaliacao(Avaliacao avaliacao) {
+		this.avaliacoes.add(avaliacao);
+	}
+	
+	public double getMediaGeral() {
+		double media =0;
+		
+		for(Avaliacao av : avaliacoes) {
+			media += av.getMedia();
+		}
+		
+		return media/avaliacoes.size();
+	}
 }
