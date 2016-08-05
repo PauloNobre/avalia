@@ -8,12 +8,10 @@ function initMap() {
 		zoom : 16,
 		mapTypeId : google.maps.MapTypeId.ROADMAP
 	});
-	console.log(map);
 }
 
 $(document).ready(
 	function(){
-	
 	$.ajax({
 		url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC9OK9jV5lZTkUKu16gfhDIraFE66ScCzk&callback=initMap",
 		dataType: "script",
@@ -21,7 +19,7 @@ $(document).ready(
 	});
 		$.ajax({
 			type : "GET",
-			url : "/avalia/getEstabelecimentos",
+			url : "../getEstabelecimentos",
 			success : function(estabelecimentos) {
 				$.each(estabelecimentos, function(index, estabelecimento) {
 

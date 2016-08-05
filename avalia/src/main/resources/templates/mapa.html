@@ -2,25 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<style type="text/css">
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-#map {
-	height: 100%;
-	width: 100%;
-}
-</style>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/mapa.css}" rel="stylesheet" />
 </head>
 <body>
-	<div>
-		<p>OIIII</p>
+	<div id="floating-panel" class="col-md-offset-10 col-md-2">
+		<a href="#" class="btn btn-sm btn-primary">Rank Estabelecimentos</a>
 	</div>
 	<div id="map"></div>
+	
+	
 	<script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
 	<script th:src="@{/js/mapa.js}"></script>
 </body>
 </html>
